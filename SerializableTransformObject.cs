@@ -44,7 +44,7 @@ namespace SerializedObjects
         /// <summary>
         /// Value: type
         /// </summary>
-        public int type { get; set; }
+        public String type { get; set; }
 
         /// <summary>
         /// Value: isStatic
@@ -80,7 +80,7 @@ namespace SerializedObjects
         /// <summary>
         /// Constructor to initialize instance with values.
         /// </summary>
-        public SerializableTransformObject(int id, int type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector4 rotation)
+        public SerializableTransformObject(int id, String type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector4 rotation)
         {
             this.id = id;
             this.type = type;
