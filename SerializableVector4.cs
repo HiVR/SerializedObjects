@@ -11,50 +11,54 @@ namespace SerializedObjects
     [Serializable]
     public class SerializableVector4
     {
-        #region Fields
+        #region Constructors
 
         /// <summary>
-        /// Float: w value
-        /// </summary>
-        public float w { get; set; }
-
-        /// <summary>
-        /// Float: x value
-        /// </summary>
-        public float x { get; set; }
-
-        /// <summary>
-        /// Float: y value
-        /// </summary>
-        public float y { get; set; }
-
-        /// <summary>
-        /// Float: z value
-        /// </summary>
-        public float z { get; set; }
-
-        #endregion Fields
-
-        #region Methods
-
-        /// <summary>
-        /// Empty constructor
+        /// Initializes a new instance of the <see cref="SerializableVector4"/> class.
         /// </summary>
         public SerializableVector4()
         {
         }
 
         /// <summary>
-        /// Constructor with all four values
+        /// Initializes a new instance of the <see cref="SerializableVector4"/> class.
         /// </summary>
+        /// <param name="w">the w parameter</param>
+        /// <param name="x">the x parameter</param>
+        /// <param name="y">the y parameter</param>
+        /// <param name="z">the z parameter</param>
         public SerializableVector4(float w, float x, float y, float z)
         {
-            this.w = w;
-            this.x = x;
-            this.y = y;
-            this.z = z;
+            this.W = w;
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
         }
 
-        #endregion Methods
+        #endregion Constructors
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the w parameter of the vector.
+        /// </summary>
+        public float W { get; set; }
+
+        /// <summary>
+        /// Gets or sets the x parameter of the vector.
+        /// </summary>
+        public float X { get; set; }
+
+        /// <summary>
+        /// Gets or sets the y parameter of the vector.
+        /// </summary>
+        public float Y { get; set; }
+
+        /// <summary>
+        /// Gets or sets the z parameter of the vector.
+        /// </summary>
+        public float Z { get; set; }
+
+        #endregion Properties
     }
 }

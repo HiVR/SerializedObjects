@@ -5,9 +5,9 @@ namespace SerializedObjects
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Sockets;
     using System.Runtime.Serialization.Formatters.Binary;
-    using System.IO;
 
     /// <summary>
     /// Serializable data class; contains position, scale and rotation vectors.
@@ -22,13 +22,13 @@ namespace SerializedObjects
         /// Socket used for sending/receiving binary data.
         /// </summary>
         [NonSerialized]
-        public Socket Socket;
+        public Socket socket;
 
         /// <summary>
         /// List of bytes used for retrieving binary stream of unknown length.
         /// </summary>
         [NonSerialized]
-        public List<byte> TransmissionBuffer = new List<byte>();
+        public List<byte> transmissionBuffer = new List<byte>();
 
         /// <summary>
         /// Byte buffer used to receive part of binary stream.
@@ -36,68 +36,83 @@ namespace SerializedObjects
         [NonSerialized]
         public byte[] buffer = new byte[2048];
 
-        /// <summary>
-        /// Value: id
-        /// </summary>
-        public int id { get; set; }
-
-        /// <summary>
-        /// Value: type
-        /// </summary>
-        public String type { get; set; }
-
-        /// <summary>
-        /// Value: isStatic
-        /// </summary>
-        public bool isStatic { get; set; }
-
-        /// <summary>
-        /// Value: position
-        /// </summary>
-        public SerializableVector3 position { get; set; }
-
-        /// <summary>
-        /// Value: scale
-        /// </summary>
-        public SerializableVector3 scale { get; set; }
-
-        /// <summary>
-        /// Value: rotation
-        /// </summary>
-        public SerializableVector4 rotation { get; set; }
-
         #endregion Fields
 
-        #region Methods
+        #region Constructors
 
         /// <summary>
-        /// Empty constructor.
+        /// Initializes a new instance of the <see cref="SerializableTransformObject"/> class.
         /// </summary>
         public SerializableTransformObject()
         {
         }
 
         /// <summary>
-        /// Constructor to initialize instance with values.
+        /// Initializes a new instance of the <see cref="SerializableTransformObject"/> class.
         /// </summary>
-        public SerializableTransformObject(int id, String type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector4 rotation)
+        /// <param name="id">the id of the object</param>
+        /// <param name="type">the type of the object</param>
+        /// <param name="isStatic">whether the object is static or not</param>
+        /// <param name="position">the position vector of the object</param>
+        /// <param name="scale">the scale vector of the object</param>
+        /// <param name="rotation">the rotation vector of the object</param>
+        public SerializableTransformObject(int id, string type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector4 rotation)
         {
-            this.id = id;
-            this.type = type;
-            this.isStatic = isStatic;
+            this.Id = id;
+            this.Type = type;
+            this.IsStatic = isStatic;
 
-            this.position = position;
-            this.scale = scale;
-            this.rotation = rotation;
+            this.Position = position;
+            this.Scale = scale;
+            this.Rotation = rotation;
         }
+
+        #endregion Constructors
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the id of the object.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the object.
+        /// </summary>
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the object is static or not.
+        /// </summary>
+        public bool IsStatic { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position vector of the object.
+        /// </summary>
+        public SerializableVector3 Position { get; set; }
+
+        /// <summary>
+        /// Gets or sets the scale vector of the object.
+        /// </summary>
+        public SerializableVector3 Scale { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rotation vector of the object.
+        /// </summary>
+        public SerializableVector4 Rotation { get; set; }
+
+        #endregion Properties
+
+        #region Methods
 
         /// <summary>
         /// Serialize this object into a byte buffer.
         /// </summary>
+        /// <returns>serialized object</returns>
         public byte[] Serialize()
         {
-            BinaryFormatter bin = new BinaryFormatter();
-            MemoryStream mem = new MemoryStream();
+            var bin = new BinaryFormatter();
+            var mem = new MemoryStream();
             bin.Serialize(mem, this);
             return mem.GetBuffer();
         }
@@ -105,11 +120,12 @@ namespace SerializedObjects
         /// <summary>
         /// DeSerialize this object from a byte buffer.
         /// </summary>
+        /// <returns>deserialized object</returns>
         public SerializableTransformObject DeSerialize()
         {
-            byte[] dataBuffer = TransmissionBuffer.ToArray();
-            BinaryFormatter bin = new BinaryFormatter();
-            MemoryStream mem = new MemoryStream();
+            var dataBuffer = this.transmissionBuffer.ToArray();
+            var bin = new BinaryFormatter();
+            var mem = new MemoryStream();
             mem.Write(dataBuffer, 0, dataBuffer.Length);
             mem.Seek(0, 0);
             return (SerializableTransformObject)bin.Deserialize(mem);
