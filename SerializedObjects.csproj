@@ -45,6 +45,7 @@
     <Compile Include="SerializableVector4.cs" />
     <Compile Include="SerializableVector3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerializableType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
