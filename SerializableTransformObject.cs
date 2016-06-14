@@ -19,22 +19,22 @@ namespace SerializedObjects
         #region Fields
 
         /// <summary>
-        /// Socket used for sending/receiving binary data.
+        /// Private instance of property below.
         /// </summary>
         [NonSerialized]
-        public Socket socket;
+        private Socket socket;
 
         /// <summary>
-        /// List of bytes used for retrieving binary stream of unknown length.
+        /// Private instance of property below.
         /// </summary>
         [NonSerialized]
-        public List<byte> transmissionBuffer = new List<byte>();
+        private List<byte> transmissionBuffer = new List<byte>();
 
         /// <summary>
-        /// Byte buffer used to receive part of binary stream.
+        /// Private instance of property below.
         /// </summary>
         [NonSerialized]
-        public byte[] buffer = new byte[2048];
+        private byte[] buffer = new byte[2048];
 
         #endregion Fields
 
@@ -70,6 +70,33 @@ namespace SerializedObjects
         #endregion Constructors
 
         #region Properties
+
+        /// <summary>
+        /// Gets or sets byte buffer used to receive part of binary stream.
+        /// </summary>
+        public byte[] Buffer
+        {
+            get { return this.buffer; }
+            set { this.buffer = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets list of bytes used for retrieving binary stream of unknown length.
+        /// </summary>
+        public List<byte> TransmissionBuffer
+        {
+            get { return this.transmissionBuffer; }
+            set { this.transmissionBuffer = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets socket used for sending/receiving binary data.
+        /// </summary>
+        public Socket Socket
+        {
+            get { return this.socket; }
+            set { this.socket = value; }
+        }
 
         /// <summary>
         /// Gets or sets the id of the object.
