@@ -56,7 +56,7 @@ namespace SerializedObjects
         /// <param name="position">the position vector of the object</param>
         /// <param name="scale">the scale vector of the object</param>
         /// <param name="rotation">the rotation vector of the object</param>
-        public SerializableTransformObject(int id, string type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector4 rotation)
+        public SerializableTransformObject(int id, SerializableType type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector4 rotation)
         {
             this.Id = id;
             this.Type = type;
@@ -106,7 +106,7 @@ namespace SerializedObjects
         /// <summary>
         /// Gets or sets the type of the object.
         /// </summary>
-        public string Type { get; set; }
+        public SerializableType Type { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the object is static or not.
