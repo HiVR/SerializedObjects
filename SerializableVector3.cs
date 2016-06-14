@@ -11,44 +11,47 @@ namespace SerializedObjects
     [Serializable]
     public class SerializableVector3
     {
-        #region Fields
+        #region Constructors
 
         /// <summary>
-        /// Float: x value
-        /// </summary>
-        public float x { get; set; }
-
-        /// <summary>
-        /// Float: y value
-        /// </summary>
-        public float y { get; set; }
-
-        /// <summary>
-        /// Float: z value
-        /// </summary>
-        public float z { get; set; }
-
-        #endregion Fields
-
-        #region Methods
-
-        /// <summary>
-        /// Empty constructor
+        /// Initializes a new instance of the <see cref="SerializableVector3"/> class.
         /// </summary>
         public SerializableVector3()
         {
         }
 
         /// <summary>
-        /// Constructor with all three values
+        /// Initializes a new instance of the <see cref="SerializableVector3"/> class.
         /// </summary>
+        /// <param name="x">the x parameter</param>
+        /// <param name="y">the y parameter</param>
+        /// <param name="z">the z parameter</param>
         public SerializableVector3(float x, float y, float z)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
         }
 
-        #endregion Methods
+        #endregion Constructors
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the x parameter of the vector.
+        /// </summary>
+        public float X { get; set; }
+
+        /// <summary>
+        /// Gets or sets the y parameter of the vector.
+        /// </summary>
+        public float Y { get; set; }
+
+        /// <summary>
+        /// Gets or sets the z parameter of the vector.
+        /// </summary>
+        public float Z { get; set; }
+
+        #endregion Properties
     }
 }
