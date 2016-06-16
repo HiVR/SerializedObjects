@@ -1,20 +1,33 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
-using System.Net.Sockets;
-using System.Text;
+﻿// <copyright file="SerializableTransformObjectTest.cs" company="HiVR">
+// Copyright (c) 2016 HiVR All Rights Reserved
+// </copyright>
 
 namespace SerializedObjects
 {
+    using NUnit.Framework;
+    using System.Collections.Generic;
+    using System.Net.Sockets;
+    using System.Text;
+
+    /// <summary>
+    /// Test <see cref="SerializableTransformObject"/> class.
+    /// </summary>
     public class SerializableTransformObjectTest
     {
         #region Methods
 
+        /// <summary>
+        /// Test Empty Constructor.
+        /// </summary>
         [Test]
         public void TestEmptyConstructor()
         {
             Assert.True(new SerializableTransformObject() is SerializableTransformObject);
         }
 
+        /// <summary>
+        /// Test Constructor.
+        /// </summary>
         [Test]
         public void TestConstructor()
         {
@@ -38,6 +51,9 @@ namespace SerializedObjects
             Assert.That(constructor.Character, Is.EqualTo(character));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Buffer"/> field.
+        /// </summary>
         [Test]
         public void TestBuffer()
         {
@@ -48,6 +64,9 @@ namespace SerializedObjects
             Assert.That(constructor.Buffer, Is.EqualTo(buffer));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.TransmissionBuffer"/> field.
+        /// </summary>
         [Test]
         public void TestTransmissionBuffer()
         {
@@ -59,6 +78,9 @@ namespace SerializedObjects
             Assert.That(constructor.TransmissionBuffer, Is.EqualTo(transmissionBuffer));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Socket"/> field.
+        /// </summary>
         [Test]
         public void TestSocket()
         {
@@ -69,6 +91,9 @@ namespace SerializedObjects
             Assert.That(constructor.Socket, Is.EqualTo(socket));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Id"/> field.
+        /// </summary>
         [Test]
         public void TestId()
         {
@@ -79,6 +104,9 @@ namespace SerializedObjects
             Assert.That(constructor.Id, Is.EqualTo(id));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Type"/> field.
+        /// </summary>
         [Test]
         public void TestType()
         {
@@ -89,6 +117,9 @@ namespace SerializedObjects
             Assert.That(constructor.Type, Is.EqualTo(type));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.IsStatic"/> field.
+        /// </summary>
         [Test]
         public void TestIsStatic()
         {
@@ -99,6 +130,9 @@ namespace SerializedObjects
             Assert.That(constructor.IsStatic, Is.EqualTo(isStatic));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Position"/> field.
+        /// </summary>
         [Test]
         public void TestPosition()
         {
@@ -109,6 +143,9 @@ namespace SerializedObjects
             Assert.That(constructor.Position, Is.EqualTo(position));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Scale"/> field.
+        /// </summary>
         [Test]
         public void TestScale()
         {
@@ -119,6 +156,9 @@ namespace SerializedObjects
             Assert.That(constructor.Scale, Is.EqualTo(scale));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Rotation"/> field.
+        /// </summary>
         [Test]
         public void TestRotation()
         {
@@ -129,6 +169,9 @@ namespace SerializedObjects
             Assert.That(constructor.Rotation, Is.EqualTo(rotation));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableTransformObject.Character"/> field.
+        /// </summary>
         [Test]
         public void TestCharacter()
         {
@@ -139,6 +182,9 @@ namespace SerializedObjects
             Assert.That(constructor.Character, Is.EqualTo(character));
         }
 
+        /// <summary>
+        /// Test to check the serialize and de-serialize methods.
+        /// </summary>
         [Test]
         public void TestSerializeDeserialize()
         {

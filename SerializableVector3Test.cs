@@ -1,17 +1,30 @@
-﻿using NUnit.Framework;
+﻿// <copyright file="SerializableVector3Test.cs" company="HiVR">
+// Copyright (c) 2016 HiVR All Rights Reserved
+// </copyright>
 
 namespace SerializedObjects
 {
+    using NUnit.Framework;
+
+    /// <summary>
+    /// Test <see cref="SerializableVector3"/> class.
+    /// </summary>
     public class SerializableVector3Test
     {
         #region Methods
 
+        /// <summary>
+        /// Test Empty Constructor.
+        /// </summary>
         [Test]
         public void TestEmptyConstructor()
         {
             Assert.True(new SerializableVector3() is SerializableVector3);
         }
 
+        /// <summary>
+        /// Test Constructor.
+        /// </summary>
         [Test]
         public void TestConstructor()
         {
@@ -27,6 +40,9 @@ namespace SerializedObjects
             Assert.That(constructor.Z, Is.EqualTo(z));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableVector3.X"/> field.
+        /// </summary>
         [Test]
         public void TestX()
         {
@@ -37,6 +53,9 @@ namespace SerializedObjects
             Assert.That(constructor.X, Is.EqualTo(x));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableVector3.Y"/> field.
+        /// </summary>
         [Test]
         public void TestY()
         {
@@ -47,6 +66,9 @@ namespace SerializedObjects
             Assert.That(constructor.Y, Is.EqualTo(y));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableVector3.Z"/> field.
+        /// </summary>
         [Test]
         public void TestZ()
         {

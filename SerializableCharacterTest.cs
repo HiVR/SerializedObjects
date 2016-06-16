@@ -1,17 +1,30 @@
-﻿using NUnit.Framework;
+﻿// <copyright file="SerializableCharacterTest.cs" company="HiVR">
+// Copyright (c) 2016 HiVR All Rights Reserved
+// </copyright>
 
 namespace SerializedObjects
 {
+    using NUnit.Framework;
+
+    /// <summary>
+    /// Test <see cref="SerializableCharacter"/> class.
+    /// </summary>
     public class SerializableCharacterTest
     {
         #region Methods
 
+        /// <summary>
+        /// Test Empty Constructor.
+        /// </summary>
         [Test]
         public void TestEmptyConstructor()
         {
             Assert.True(new SerializableCharacter() is SerializableCharacter);
         }
 
+        /// <summary>
+        /// Test Constructor.
+        /// </summary>
         [Test]
         public void TestConstructor()
         {
@@ -25,6 +38,9 @@ namespace SerializedObjects
             Assert.That(constructor.Name, Is.EqualTo(name));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableCharacter.IsPatient"/> field.
+        /// </summary>
         [Test]
         public void TestisPatient()
         {
@@ -35,6 +51,9 @@ namespace SerializedObjects
             Assert.That(constructor.IsPatient, Is.EqualTo(isPatient));
         }
 
+        /// <summary>
+        /// Test <see cref="SerializableCharacter.Name"/> field.
+        /// </summary>
         [Test]
         public void TestName()
         {
