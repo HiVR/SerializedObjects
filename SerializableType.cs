@@ -31,6 +31,21 @@ namespace SerializedObjects
         /// <summary>
         /// The television type.
         /// </summary>
-        Television
+        Television,
+
+        /// <summary>
+        /// The character type.
+        /// </summary>
+        Character,
+
+        /// <summary>
+        /// The ground type.
+        /// </summary>
+        Ground,
+
+        /// <summary>
+        /// Type is unknown.
+        /// </summary>
+        Unknown
     }
 }
