@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SerializableCharacter.cs" />
     <Compile Include="SerializableTransformObject.cs" />
-    <Compile Include="SerializableVector4.cs" />
     <Compile Include="SerializableVector3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerializableType.cs" />

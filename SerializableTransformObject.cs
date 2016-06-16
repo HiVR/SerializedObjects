@@ -56,7 +56,8 @@ namespace SerializedObjects
         /// <param name="position">the position vector of the object</param>
         /// <param name="scale">the scale vector of the object</param>
         /// <param name="rotation">the rotation vector of the object</param>
-        public SerializableTransformObject(int id, SerializableType type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector3 rotation)
+        /// <param name="character">the serializable character object, if the type is character</param>
+        public SerializableTransformObject(int id, SerializableType type, bool isStatic, SerializableVector3 position, SerializableVector3 scale, SerializableVector3 rotation, SerializableCharacter character)
         {
             this.Id = id;
             this.Type = type;
@@ -65,6 +66,8 @@ namespace SerializedObjects
             this.Position = position;
             this.Scale = scale;
             this.Rotation = rotation;
+
+            this.Character = character;
         }
 
         #endregion Constructors
@@ -127,6 +130,11 @@ namespace SerializedObjects
         /// Gets or sets the rotation vector of the object.
         /// </summary>
         public SerializableVector3 Rotation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the character object.
+        /// </summary>
+        public SerializableCharacter Character { get; set; }
 
         #endregion Properties
 
