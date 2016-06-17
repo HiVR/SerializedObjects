@@ -19,6 +19,21 @@ namespace SerializedObjects
         Car,
 
         /// <summary>
+        /// The police car type.
+        /// </summary>
+        PoliceCar,
+
+        /// <summary>
+        /// The ambulance type.
+        /// </summary>
+        Ambulance,
+
+        /// <summary>
+        /// The fire truck type.
+        /// </summary>
+        FireTruck,
+
+        /// <summary>
         /// The garden type.
         /// </summary>
         Garden,
