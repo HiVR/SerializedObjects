@@ -25,7 +25,7 @@ namespace SerializedObjects
         /// </summary>
         /// <param name="isPatient">is the character the patient</param>
         /// <param name="name">the name of the character</param>
-        public SerializableCharacter(bool isPatient, String name)
+        public SerializableCharacter(bool isPatient, string name)
         {
             this.IsPatient = isPatient;
             this.Name = name;
@@ -36,14 +36,14 @@ namespace SerializedObjects
         #region Properties
 
         /// <summary>
-        /// Gets or sets the isPatient bool.
+        /// Gets or sets a value indicating whether the character is a patient.
         /// </summary>
         public bool IsPatient { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the character.
         /// </summary>
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         #endregion Properties
     }

@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.2.1\lib\net35\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,10 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SerializableCharacter.cs" />
+    <Compile Include="SerializableCharacterTest.cs" />
     <Compile Include="SerializableTransformObject.cs" />
+    <Compile Include="SerializableTransformObjectTest.cs" />
     <Compile Include="SerializableVector3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerializableType.cs" />
+    <Compile Include="SerializableVector3Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
